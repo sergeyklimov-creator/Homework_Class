@@ -95,10 +95,7 @@ def get_heaviest():
     return heaviest_pet
 
 def get_total_weight():
-    total_weight = 0
-    for key in pets:
-        total_weight += pets[key].weight
-    return total_weight
+    return sum ([getattr(pets[key], 'weight') for key in pets])
 
 def print_pets():
     for key in pets:
